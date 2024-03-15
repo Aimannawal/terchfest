@@ -13,9 +13,9 @@
                         @method('PUT')
                       @csrf
                       <select class="select select-bordered w-full max-w-xs" name="kategori">
-                        <option disabled selected>{{ $catatan->kategori->kategori }}</option>
-                        <option value="1">Olahraga</option>
-                        <option value="2">Pemrogaman</option>
+                        @foreach ($kategori as $index => $Item)
+                            <option value="{{ $Item->id }}">{{ $Item->kategori }}</option>
+                            @endforeach
                       </select>
                       <br><br>
                   <textarea placeholder="Berikan judul" class="textarea textarea-bordered textarea-xs w-full max-w-xs" name="judul">{{ $catatan->judul }}</textarea> <br>
